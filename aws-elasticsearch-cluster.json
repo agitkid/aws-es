@@ -18,7 +18,7 @@
       "Description" : "Number of instances to start",
       "Default": "3",
       "MinValue": "2",
-      "MaxValue": "12",
+      "MaxValue": "10",
       "Type" : "Number"
     },
     "KeyName" : {
@@ -35,29 +35,17 @@
     },
     "SubnetIds" : {
       "Description" : "Specify subnets where to launch the instances",
-      "Type" : "List<AWS::EC2::Subnet::Id>",
+      "Type" : "AWS::EC2::Subnet::Id",
       "Default": "subnet-82099ee6, subnet-fe208e88, subnet-b39c61eb",
       "ConstraintDescription" : "Must be a subnet"
     },
     "SubnetAZ": {
       "Description": "Availability Zones of the Subnet",
-      "Type": "List<AWS::EC2::AvailabilityZone::Name>",
+      "Type": "AWS::EC2::AvailabilityZone::Name",
       "Default": "us-west-2a, us-west-2b, us-west-2c"
     },
-    "Environment": {
-      "AllowedValues": [
-        "local",
-        "dev",
-        "staging",
-        "prod"
-      ],
-      "ConstraintDescription": "must be a valid environment",
-      "Default": "dev",
-      "Description": "Environment",
-      "Type": "String"
-    },
     "ServiceName": {
-          "Default": "es-cburnett",
+          "Default": "aws-es-cb",
           "Description": "Service Name",
           "Type": "String"
         }
@@ -157,18 +145,12 @@
               "Version": "2012-10-17",
               "Statement": [{
                 "Effect":"Allow",
-                "Action":"iam:PassRole",
-                "Resource":"*"
-              },
-                {
-                  "Effect":"Allow",
-                  "Action":"iam:ListInstanceProfiles",
-                  "Resource":"*"
-                },
-                {
-                  "Effect":"Allow",
-                  "Action":"ec2:*",
-                  "Resource":"*"
+                    "Action": [
+                     "iam:PassRole",
+                     "iam:ListInstanceProfiles",
+                     "ec2:*"
+                    ],
+                    "Resource": "*"
                 }]
             },
             "PolicyName": "allowEC2"
@@ -224,7 +206,7 @@
           "Ref": "ESLaunchConfig"
         },
         "MinSize": "2",
-        "MaxSize": "12",
+        "MaxSize": "10",
         "DesiredCapacity": {
           "Ref": "InstanceCount"
         },
