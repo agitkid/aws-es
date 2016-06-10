@@ -36,13 +36,13 @@
     "SubnetIds" : {
       "Description" : "Specify subnets where to launch the instances",
       "Type" : "AWS::EC2::Subnet::Id",
-      "Default": "subnet-82099ee6, subnet-fe208e88, subnet-b39c61eb",
+      "Default": "subnet-82099ee6",
       "ConstraintDescription" : "Must be a subnet"
     },
     "SubnetAZ": {
       "Description": "Availability Zones of the Subnet",
       "Type": "AWS::EC2::AvailabilityZone::Name",
-      "Default": "us-west-2a, us-west-2b, us-west-2c"
+      "Default": "us-west-2a"
     },
     "ServiceName": {
           "Default": "aws-es-cb",
