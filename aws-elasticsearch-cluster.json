@@ -24,21 +24,25 @@
     "KeyName" : {
       "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instances",
       "Type" : "AWS::EC2::KeyPair::KeyName",
+      "Default": "elasticsearch",
       "ConstraintDescription" : "Must be the name of an existing EC2 KeyPair."
     },
     "VPCId" : {
       "Description" : "VPC you are trying launch the instances in",
       "Type" : "AWS::EC2::VPC::Id",
+      "Default": "vpc-a3ae3fc7",
       "ConstraintDescription" : "Must be a valid vpc ID"
     },
     "SubnetIds" : {
       "Description" : "Specify subnets where to launch the instances",
       "Type" : "List<AWS::EC2::Subnet::Id>",
+      "Default": "subnet-82099ee6, subnet-fe208e88, subnet-b39c61eb",
       "ConstraintDescription" : "Must be a subnet"
     },
     "SubnetAZ": {
       "Description": "Availability Zones of the Subnet",
-      "Type": "List<AWS::EC2::AvailabilityZone::Name>"
+      "Type": "List<AWS::EC2::AvailabilityZone::Name>",
+      "Default": "us-west-2a, us-west-2b, us-west-2c"
     },
     "Environment": {
       "AllowedValues": [
@@ -53,7 +57,7 @@
       "Type": "String"
     },
     "ServiceName": {
-          "Default": "",
+          "Default": "es-cburnett",
           "Description": "Service Name",
           "Type": "String"
         }
