@@ -175,19 +175,19 @@
         "GroupDescription": "Security group allows access to ES from specific IP range",
         "SecurityGroupIngress": [
           {
-            "CidrIp": "75.82.34.229/32",
+            "CidrIp": "my-ip-address/32",
             "FromPort": "22",
             "IpProtocol": "tcp",
             "ToPort": "22"
           },
           {
-            "CidrIp": "75.82.34.229/32",
+            "CidrIp": "my-ip-address/32",
             "FromPort": "9200",
             "IpProtocol": "tcp",
             "ToPort": "9200"
           },
           {
-            "CidrIp": "75.82.34.229/32",
+            "CidrIp": "my-ip-address/32",
             "FromPort": "9300",
             "IpProtocol": "tcp",
             "ToPort": "9300"
