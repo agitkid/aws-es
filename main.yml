@@ -1,0 +1,10 @@
+- name: "Setup the Elastic Search on nodes."
+  hosts: elasticsearchnodes
+  remote_user: ubuntu
+  roles:
+    - { role: ansible-elasticsearch, sudo: yes }
+  vars_files:
+    - roles/ansible-elasticsearch/defaults/main.yml
+#  tasks:
+#    - include: roles/ansible-elasticsearch/tasks/main.yml
+
