@@ -1,3 +1,0 @@
-[submodule "ansible-elasticsearch"]
-	path = ansible-elasticsearch
-	url = git://github.com/traackr/ansible-elasticsearch.git
