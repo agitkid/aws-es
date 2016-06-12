@@ -5,6 +5,4 @@
     - { role: ansible-elasticsearch, sudo: yes }
   vars_files:
     - roles/ansible-elasticsearch/defaults/main.yml
-#  tasks:
-#    - include: roles/ansible-elasticsearch/tasks/main.yml
 
