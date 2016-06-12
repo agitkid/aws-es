@@ -1,0 +1,46 @@
+---
+# Elasticsearch Ansible Variables
+
+elasticsearch_user: "ubuntu"
+elasticsearch_group: "ubuntu"
+elasticsearch_download_url: https://download.elasticsearch.org/elasticsearch/elasticsearch
+elasticsearch_apt_repos:
+  - 'ppa:webupd8team/java'
+#elasticsearch_apt_java_package: oracle-java7-installer
+elasticsearch_apt_dependencies:
+  - htop
+  - ntp
+  - unzip
+elasticsearch_version: 1.7.3
+#elasticsearch_version: 2.3.3
+elasticsearch_apt_java_package: oracle-java8-installer
+elasticsearch_java_home: /usr/lib/jvm/java-8-oracle
+elasticsearch_heap_size: 1g
+elasticsearch_max_open_files: 65535
+elasticsearch_timezone: "America/Los_Angeles"
+elasticsearch_node_max_local_storage_nodes: 1
+elasticsearch_index_mapper_dynamic: "true"
+elasticsearch_memory_bootstrap_mlockall: "true"
+elasticsearch_install_java: "true"
+elasticsearch_plugins:
+  - { name: 'lmenezes/elasticsearch-kopf/1.0' }
+#  - { name: 'elasticsearch/elasticsearch-mapper-attachments/2.7.1', reinstall: false }
+#  - { name: 'com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb/2.0.9', reinstall: false }
+#  - { name: 'facet-script', url: 'http://dl.bintray.com/content/imotov/elasticsearch-plugins/elasticsearch-facet-script-1.1.2.zip', reinstall: false }
+  - { name: 'http-basic', url: 'https://github.com/Asquera/elasticsearch-http-basic/releases/download/v1.5.1/elasticsearch-http-basic-1.5.1.jar', download_only: true, reinstall: false }
+elasticsearch_thread_pools:
+  - "threadpool.bulk.type: fixed"
+  - "threadpool.bulk.size: 50"
+  - "threadpool.bulk.queue_size: 1000"
+elasticsearch_service_startonboot: yes
+elasticsearch_plugin_aws_version: 2.7.1
+apt_cache_valid_time: 300 # seconds between "apt-get update" calls.
+elasticsearch_work_dir: /tmp/elasticsearch
+elasticsearch_home_dir: /usr/share/elasticsearch
+elasticsearch_plugin_dir: /usr/share/elasticsearch/plugins
+elasticsearch_log_dir: /var/log/elasticsearch
+elasticsearch_data_dir: /var/lib/elasticsearch
+elasticsearch_conf_dir: /etc/elasticsearch
+elasticsearch_pid_dir: /var/run
+elasticsearch_service_state: started
+elasticsearch_discovery_zen_ping_unicast_hosts: ["172.31.20.211", "172.31.20.212", "172.31.20.213"]
