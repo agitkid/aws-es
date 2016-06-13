@@ -1,6 +1,6 @@
 ## Setup AWS Elasticsearch cluster with kopf
 
-## Create ec2 cluster in cloudformation:
+## Create ec2 servers via cloudformation:
 
 aws cloudformation create-stack --stack-name aws-es-cb --template-body file:///local/path/to/aws-cloudformation-es.json --capabilities CAPABILITY_IAM
 
