@@ -12,4 +12,4 @@ ansible-playbook main.yml -i inventory.ini --private-key ~/.ssh/my_private_key.p
 
 http://52.33.94.161:9200/_plugin/kopf/#!/nodes
 
-![alt tag](https://cloud.githubusercontent.com/assets/2602702/16055374/d8b70d14-3225-11e6-8a70-af0e6209e19e.png)
+![alt tag](https://cloud.githubusercontent.com/assets/2602702/16055545/ab2b046c-3226-11e6-9eb7-d2cffb20af80.png)
